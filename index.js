@@ -13,5 +13,20 @@ const tutorials = [
 
 const titleCased = () => {
   // use the .map method on the tutorials to return a new array
-  return tutorials
+  let newTutorials = tutorials.map(tutorial => {
+    // use the map on each word of the tutorial
+    titleCase(tutorial)
+  })
+  return newTutorials
+
 }
+
+// thanks to free code camp https://www.freecodecamp.org/news/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27/ 
+function titleCase(str) {
+  let wordTitledUp = str.toLowerCase().split(' ').map(function(word) {
+    return (word.charAt(0).toUpperCase() + word.slice(1));
+  }).join(' ');
+  //console.log(wordTitledUp)
+  return wordTitledUp
+}
+
